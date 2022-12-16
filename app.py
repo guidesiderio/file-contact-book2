@@ -21,9 +21,16 @@ def ler_contato():
 # Insere um novo contato
 def insere_contato(contato, nome_arquivo):    
     mini_agenda = open(nome_arquivo, 'a')
+    mini_agenda.write(contato)
+    mini_agenda.close()
 
-    novo_contato = ler_contato()
-    mini_agenda.write(novo_contato)
+# Lista todos os contatos salvos no arquivo
+def listar_contatos(nome_arquivo):
+    mini_agenda = open(nome_arquivo, 'r')
+    for linha in mini_agenda:
+        print(linha, end='')    
+
+
 
 
     
