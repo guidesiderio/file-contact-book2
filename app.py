@@ -10,7 +10,7 @@ def inicializa_agenda(nome_arquivo = 'agenda.txt'):
 
     return nome_arquivo
 
-# Ler um contato
+# Lê um contato
 def ler_contato():
     id_contato = input('Id: ')
     nome_contato = input('Nome: ')
@@ -22,7 +22,7 @@ def ler_contato():
 
     return contato
 
-# Insere um novo contato
+# Insere um novo contato no arquivo
 def insere_contato(contato, nome_arquivo):    
     mini_agenda = open(nome_arquivo, 'a')
     mini_agenda.write(contato)
@@ -32,7 +32,7 @@ def insere_contato(contato, nome_arquivo):
 def listar_contatos(nome_arquivo):
     mini_agenda = open(nome_arquivo, 'r')
     if os.path.getsize(nome_arquivo) == 0:
-        print('0 contatos registrados!')
+        print('0 contato registrado!')
     
     for linha in mini_agenda:
         print(linha, end='')
@@ -41,6 +41,7 @@ def listar_contatos(nome_arquivo):
 
     mini_agenda.close()    
 
+# Menu de opções
 def mostra_menu():            
     print('--- Bem vindo a mini-agenda ---')
     print('1 - Mostrar os contatos registrados')
@@ -48,13 +49,14 @@ def mostra_menu():
     print('3 - Sair')
     print()
 
+# Aplicação
 nome_arquivo = inicializa_agenda()
 mostra_menu()    
 ler_opcao = input('Qual a opção? ')
 opcao = int(ler_opcao)
 while(opcao != 3):
     if opcao == 1:
-        print('# Lista contatos #')
+        print('# Lista de contatos #')
         listar_contatos(nome_arquivo)
     if opcao == 2:
         print('# Novo contato #')
