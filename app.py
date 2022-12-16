@@ -27,8 +27,13 @@ def insere_contato(contato, nome_arquivo):
 # Lista todos os contatos salvos no arquivo
 def listar_contatos(nome_arquivo):
     mini_agenda = open(nome_arquivo, 'r')
+    if len(mini_agenda) == 0:
+        print('0 contatos registrados!')
+    
     for linha in mini_agenda:
         print(linha, end='')
+
+    mini_agenda.close()    
 
 def mostra_menu():            
     print('--- Bem vindo a mini-agenda ---')
