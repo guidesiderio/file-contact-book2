@@ -28,7 +28,13 @@ def insere_contato(contato, nome_arquivo):
 def listar_contatos(nome_arquivo):
     mini_agenda = open(nome_arquivo, 'r')
     for linha in mini_agenda:
-        print(linha, end='')    
+        print(linha, end='')
+
+def mostra_menu():            
+    print('--- Bem vindo a mini-agenda ---')
+    print('1 - Mostrar os contatos registrados')
+    print('2 - Insere um novo contato')
+    print('3 - Sair')
 
 
 
